@@ -13,6 +13,9 @@
   --green: #61c96f;
   --red: #f94141;
 }
+html{
+  scroll-behavior: smooth;
+}
 body {
   min-height: 100vh;
   min-width: 100%;
