@@ -3,6 +3,7 @@ import front from "../../../assets/front.png";
 import back from "../../../assets/back.png";
 import { motion } from "framer-motion";
 import "./style.css";
+import { Link } from "react-router-dom";
 function MainComponent() {
   return (
     <div className="main-Container">
@@ -36,7 +37,7 @@ function MainComponent() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: 0.9 }}
         >
-          <Button text={"Dashboard"} bool={"btn1"} />
+          <Link to="/dashboard"><Button text={"Dashboard"} bool={"btn1"} /></Link>
           <Button text={"Share"} bool={"btn2"} />
         </motion.div>
       </div>
