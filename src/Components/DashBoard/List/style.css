@@ -1,107 +1,149 @@
-.table-row {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.list-container{
+     padding:0rem 0.5rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 95%;
+     margin: auto;
+     height: 5rem;
+     border-radius: 0.5rem;
+     transition: all 0.3s;
 }
-.list-row {
-  display: flex;
-  width: 95%;
-  padding: 0.5rem 2rem;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 1rem;
+.list-container:hover{
+     background-color: var(--darkgrey);
 }
-.list-row:hover{
-     background: var(--darkgrey);
+.list-div1{
+     height: 4.5rem;
+     width: 90px;
 }
-.info-flex2 {
-  display: flex;
-}
-.list-row td{
-     width: 8%;
+.list-coin-names{
      text-align: left;
+     width: 100px;
 }
-.volume2{
+.list-chip-flex{
+     width: 200px;
+}
+.list-price{
+     width: 150px ;
+     text-align: center;
+}
+.list-volume{
+     width: 370px;
+     display: flex;
+     flex-direction: row;
+     font-size: 1.1rem;
+     justify-content: space-between;
+}
+.list-volume-p3{
      display: none;
 }
+@media only screen and (max-width:1100px){
+     .list-container{
+          width: 100%;
+     }
+}
 @media only screen and (max-width:1000px){
-     .td-icon{
-          display: none;
+     .list-div1{
+          width: 50px;
+          padding: 0;
+          img{
+               width: 2.8rem;
+               height: 2.8rem;
+          }
      }
-     .list-row{
-          width: 100%;
-          padding: 0 3.9rem 0 0;
-          font-size: 70%;
-          margin: 0;
-     } 
-     .name-col>p{
-          font-size: 140%;
+     .list-coin-names{
+          text-align: left;
+          width: 80px ;
+          p:first-child{
+               font-size: 1rem;
+          }
      }
-     .td-price1{
-          padding: 0.3rem 1rem;
-          min-width: 80px;
+     .list-volume{
+          padding: 0;
+          width: 260px;
+          font-size: 0.9rem;
+     }
+     .list-price{
+          padding: 0;
+          width: 100px ;
+          font-size: 1rem;
+     }
+     .list-chip-flex{
+          width: 150px;
+          padding: 0;
+          p:first-child{
+               padding: 0.3rem 0.7rem;
+               font-size: 0.9rem;
+          }
+          p:last-child{
+               padding: 0.09rem;
+          }
      }
 }
-@media only screen and (max-width:730px){
-     .td-volume{
+@media only screen and (max-width:750px){
+     .list-chip2{
           display: none;
      }
-     .td-logo{
-          width: 3rem;
-          height: 3rem;
+     .list-chip-flex{
+          width: 95px;
+     }
+     .list-volume{
+          width: 130px;
+     }
+     .list-volume-p1{
+          display: none;
      }
 }
-@media only screen and (max-width:640px) {
-     .volume1{
+@media only screen and (max-width:600px){
+     .list-div1{
+          img{
+               width: 2.3rem;
+               height: 2.3rem;
+          }
+     }
+     .list-volume{
+          width: 60px;
+     }
+     .list-volume-p2{
           display: none;
      }
-     .volume2{
+     .list-volume-p3{
           display: flex;
-          justify-content: flex-end;
-          width: 300%;
-     }
-     .td-logo{
-          width: 2rem;
-          height: 2rem;
-     }
-     .list-row{
-          width: 100%;
-     }
-     .name-col>p{
-          font-size: small;
-     }
-     .td-price1{
-          padding: 0.3rem 0.7rem;
-          min-width: 70px;
-          font-size: small;
      }
 }
-@media only screen and (max-width:480px){
-     .volume2{
-          width: 440%;
-          font-size: 10px;
+@media only screen and (max-width:500px){
+     .list-container{
+          padding: 0rem;
      }
-     .tdCoin-price{
-          width: 80px;
-          text-align: center;
-          font-size: 10px;
+     .list-div1{
+          width: 50px;
+          img{
+               width: 2rem;
+               height: 2rem;
+          }
      }
-     .table-row{
-          display: block;
-     } 
-     .td-price1{
-          padding: 0.1rem 0.3rem;
-          min-width: 70px;
-          font-size: 10px;
+     .list-coin-names{
+          width: 65px ;
+          p:first-child{
+               font-size: 0.7rem;
+          }
+          P:last-child{
+               font-size: 0.6rem;
+          }
      }
-     .td-logo{
-          width: 1.5rem;
-          height: 1.5rem;
-     }
-     .name-col>p{
-          font-size: 10px;
-     }
-}
+     .list-chip-flex{
+          width: 75px;
+          padding: 0;
 
+          p:first-child{
+               padding: 0.2rem 0.5rem;
+               font-size: 0.7rem;
+          }
+     }
+     .list-price{
+          padding: 0;
+          width: 80px ;
+          font-size: 0.8rem;
+     }
+
+}

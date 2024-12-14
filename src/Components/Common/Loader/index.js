@@ -1,12 +1,9 @@
-import React from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 import "./style.css";
-import { CircularProgress } from "@mui/material";
-function Loader() {
+export default function Loader() {
   return (
-    <div className="loader-container">
+    <div className='loader'>
       <CircularProgress />
     </div>
   );
 }
-
-export default Loader;

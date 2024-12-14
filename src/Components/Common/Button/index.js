@@ -1,8 +1,7 @@
-import React from 'react'
 import "./style.css";
-function Button({text,outlined}) {
+function Button({text,bool}) {
   return (
-    <div className={outlined?"outlined-btn":"btn"}>{text}</div>
+    <button className={`btn ${bool}`}>{text}</button>
   )
 }
 

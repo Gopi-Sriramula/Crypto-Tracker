@@ -1,5 +1,4 @@
-export const convertDate = function(number){
-     const date = new Date(number);
-     const result = date.getDate()+"/"+(date.getMonth()+1);
-     return result;
+export const convertDate = function(date){
+     var myDate = new Date(date);
+     return myDate.getDate()+"/"+(myDate.getMonth()+1)
 }

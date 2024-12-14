@@ -1,99 +1,92 @@
-
 .grid-container{
-     width: 320px;
      background-color: var(--darkgrey);
+     height: 285px;
+     width: 300px;
+     gap: 1rem;
+     border-radius: 0.7rem;
      border: 2px solid var(--darkgrey);
-     border-radius: 0.75rem;
-     padding: 0.4rem 0rem;
+     transition: all 0.3s;
 }
-.info-flex{
+.grid-link{
+     text-decoration: none;
+     color: white;
+}
+.grid-div1{
      display: flex;
      align-items: center;
-     justify-content: flex-start;
      gap: 1rem;
-     margin: 1.5rem;
+     padding: 1.5rem;
 }
-.name-col{
-     display: flex;
-     flex-direction: column;
-     gap: 0.5rem;
+.logo{
+     width: 3.3rem;
+     height: 3.3rem;
 }
-.coin-logo{
-     width: 3.5rem;
-     height: 3.5rem;
-}
-.coin-symbol{
-     color: var(--white);
+.coin-names>p:first-child{
+     text-transform: uppercase;
+     font-size: 1.3rem;
      font-weight: 600;
-     text-transform: capitalize;
-     font-size: 1.2rem;
+     margin-bottom: 0.2rem;
 }
-.coin-name{
-     color: var(--grey);
-     font-weight: light;
+.coin-names>p:last-child{
      text-transform: capitalize;
-     font-size: 0.95rem;
+     color: var(--grey);
+     font-size: small;
+     font-weight: 500;
 }
 .chip-flex{
      display: flex;
      align-items: center;
-     justify-content: flex-start;
      gap: 1rem;
-     margin: 1.1rem 1.5rem;
+     padding:0 1.5rem;
 }
-.chip-price{
+.chip-flex-p1{
+     padding: 0.4rem 0.9rem;
      border: 2px solid var(--green);
-     border-radius: 2rem;
-     padding: 0.5rem 1.5rem;
-     min-width: 100px;
-     text-align: center;
-     font-weight: 600;
      color: var(--green);
-     font-size: 0.9rem;
-}
-.red,.border-red:hover{
-     border-color:var(--red) ;
-     color: var(--red);
+     font-weight: 700;
+     border-radius:3rem ;
      transition: all 0.3s;
-
 }
-.green,.border-green:hover{
-     transition: all 0.3s;
-     border-color: var(--green) ;
+.chip-flex-p2{
+     border: 2px solid var(--green);
      color: var(--green);
-
-}
-.edit{
-     border-radius: 50%;
      padding: 0.2rem;
-     min-width: 40px;
-}
-.red:hover{
-     background-color: var(--red);
-     color: var(--white);
+     border-radius: 50%;
      transition: all 0.3s;
+
 }
-.green:hover{
-     background-color: var(--green);
-     color: var(--white);
-     transition: all 0.3s;
-}
-.coin-price{
+.price{
      color: var(--green);
-     margin: 1.3rem 1.5rem;
-}
-.red1{
-     color: var(--red);
-}
-.green1{
-     color: var(--green);
+     font-size: 1.25rem;
+     font-weight:600;
+     padding: 1.3rem 2rem;
 }
 .total-volume{
+     color: var(--grey);
+     font-size: 0.9rem;
+     padding: 0.3rem 1.5rem;
      display: flex;
      flex-direction: column;
-     font-weight: 500;
-     font-size: 0.9rem;
-     gap: 0.5rem;
-     color: var(--grey);
-     margin: 1.3rem;
+     gap: 0.3rem;
+}
+.red1{
+     border-color: var(--red);
+     color: var(--red);
+}
+.red1:hover{
+     background-color: var(--red);
+     color: var(--white);
+}
+.green1:hover{
+     background-color: var(--green);
+     color: var(--white);
+}
+.red2{
+     color: var(--red);
+}
+.red3:hover{
+     border-color:var(--red);
+}
+.green3:hover{
+     border-color: var(--green);
 }

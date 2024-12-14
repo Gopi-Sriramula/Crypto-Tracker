@@ -1,6 +1,6 @@
-.pagination-component{
+.pagination{
      display: flex;
      align-items: center;
      justify-content: center;
-     margin-bottom:2.5rem ;
+     padding: 2rem 0rem;
 }

@@ -1,51 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Common/Header";
-import TabsComponent from "../Components/DashBoard/Tabs";
-import axios from "axios";
-import Search from "../Components/DashBoard/Search";
-import PaginationComponent from "../Components/DashBoard/Pagination";
+import BasicTabs from "../Components/Dashboard/Tabs";
+import Tabs from "../Components/Dashboard/Tabs";
+import { get100Coins } from "../functions/get100Coins";
 import Loader from "../Components/Common/Loader";
-import BackToTop from "../Components/Common/BackToTop";
-import get100Coins from "../Functions/get100Coins";
-function DashboardPage() {
+import PaginationControlled from "../Components/Dashboard/Pagination";
+import SearchBar from "../Components/Dashboard/SearchBar";
+
+function DashBoard() {
+  const [text,setText] = useState("")
+  const [coin, setCoin] = useState(null);
   const [page, setPage] = useState(1);
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState("");
-  const [isLoading, setisLoading] = useState(true);
-  const onChangeSearch = (e) => {
-    setSearch(e.target.value);
+  const handleChange = (event, value) => {
+    setPage(value);
   };
-  const filteredCoins = coins.filter(
-    (item) =>
-      item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.symbol.toLowerCase().includes(search.toLowerCase())
-  );
-  const pages = filteredCoins.slice(page * 10 - 10, page * 10);
+  let coins10;
+  let searchCoins;
+  if(coin){
+    coins10 = coin.slice((page-1)*10,(page*10));
+    searchCoins = coins10.filter(item=>item.symbol.toLowerCase().includes(text.toLowerCase()) || item.id.toLowerCase().includes(text.toLowerCase()));
+  }
   useEffect(() => {
-    getData()
+    get100Coins(setCoin);
   }, []);
-  const getData = async ()=>{
-    const myCoins = await get100Coins();
-    if(myCoins){
-      setisLoading(false);
-      setCoins(myCoins);
-    }
+  if (!coin) {
+    return <Loader />;
   }
   return (
     <div>
       <Header />
-      {isLoading ? (
-        <Loader/>
-      ) : (
-        <>
-          <Search search={search} onChangeSearch={onChangeSearch} />
-          <TabsComponent coins={pages} />
-          <PaginationComponent page={page} setPage={setPage} />
-          <BackToTop/>
-        </>
-      )}
+      <SearchBar text={text} setText={setText}/>
+      <Tabs coin={searchCoins} />
+      <PaginationControlled page={page} handleChange={handleChange} />
     </div>
   );
 }
 
-export default DashboardPage;
+export default DashBoard;

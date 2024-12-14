@@ -1,38 +1,45 @@
-import { useState } from "react";
-import Drawer from "@mui/material/Drawer";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
-import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Key } from "@mui/icons-material";
-export default function TemporaryDrawer() {
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+export default function Drawer() {
   const [state, setState] = useState(false);
   return (
     <div>
-      {["right"].map((anchor, i) => (
-        <>
-          <Button onClick={() => setState(true)}>
-            <MenuIcon className="link" />
+      {["right"].map((anchor,i) => (
+        <div key={i}>
+          <Button
+            onClick={() => {
+              setState(true);
+            }}
+          >
+            <MenuRoundedIcon className="link"/>
           </Button>
-          <Drawer key={i}
-            anchor={"right"}
+          <SwipeableDrawer
+            anchor={anchor}
             open={state}
+            onOpen={()=>{setState(true)}}
             onClose={() => {
               setState(false);
             }}
           >
-            <div className="mobile-div">
+            <div className="header-drawer">
               <Link to="/" className="link">
-                <p>Home</p>
+                Home
+              </Link>
+              <Link to="/compare" className="link">
+                Compare
               </Link>
               <Link to="/watchlist" className="link">
-                <p>Watchlist</p>
+                Watchlist
               </Link>
               <Link to="/dashboard" className="link">
-                <p>Dashboard</p>
+                Dashboard
               </Link>
             </div>
-          </Drawer>
-        </>
+          </SwipeableDrawer>
+        </div>
       ))}
     </div>
   );

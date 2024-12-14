@@ -1,3 +1,4 @@
+
 .search-flex{
      display: flex;
      align-items: center;
@@ -7,7 +8,7 @@
      color: var(--grey);
      background-color: var(--darkgrey);
      width: 85%;
-     margin: 1rem auto 3rem;
+     margin: 1rem auto 2rem;
      border-radius: 3rem;
      input{
           background-color: var(--darkgrey);

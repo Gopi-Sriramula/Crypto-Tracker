@@ -1,0 +1,24 @@
+.coinInfo{
+     /* padding: 1rem; */
+     width: 85%;
+     margin: auto;
+     display: flex;
+     gap: 1rem;
+     flex-direction: column;
+     padding: 1.5rem;
+     background-color: var(--darkgrey);
+     margin-top: 1rem;
+     border-radius: 1rem;
+     h1{
+          text-transform: capitalize;
+     }
+     p{
+          a{
+               text-decoration: none;
+               color: var(--blue);
+          }
+     }
+     span{
+          color: var(--grey);
+     }
+}

@@ -1,12 +1,11 @@
-import React from "react";
-import MainComponent from "../Components/Common/MainComponent";
 import Header from "../Components/Common/Header";
+import MainComponent from "../Components/Common/MainComponent";
 
 function HomePage() {
   return (
     <div>
-      <Header/>
-      <MainComponent/>
+      <Header />
+      <MainComponent />
     </div>
   );
 }

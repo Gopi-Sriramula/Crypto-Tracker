@@ -1,44 +1,40 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
+import { useEffect, useState } from "react";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import "./style.css";
 import Grid from "../Grid";
+import "./style.css";
 import List from "../List";
-const style = {
+const styles = {
   color: "var(--white)",
   fontWeight: 600,
-  fontSize: "1.1rem",
 };
-export default function TabsComponent({ coins }) {
+export default function Tabs({ coin }) {
   const [value, setValue] = useState("grid");
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <div>
       <TabContext value={value}>
         <TabList onChange={handleChange} variant="fullWidth">
-          <Tab label="Grid" value="grid" sx={style} />
-          <Tab label="List" value="list" sx={style} />
+          <Tab label="Grid" value="grid" sx={styles} />
+          <Tab label="List" value="list" sx={styles} />
         </TabList>
         <TabPanel value="grid">
-          <div className="grid-flex">
-            {coins.map((coin, i) => {
-              return <Grid coin={coin} key={coin.id} />;
+          <div className="grid">
+            {coin.map((item,i) => {
+              return <Grid item={item} key={item.id} i={i}/>;
             })}
           </div>
         </TabPanel>
-        <TabPanel value="list" >
-          <table className="table-row">
-            {coins.map((coin, i) => {
-              return <List coin={coin} key={coin.id} />;
+        <TabPanel value="list">
+          <div className="list">
+            {coin.map((item,i) => {
+              return <List item={item} key={item.symbol} i={i} />;
             })}
-          </table>
+          </div>
         </TabPanel>
       </TabContext>
     </div>

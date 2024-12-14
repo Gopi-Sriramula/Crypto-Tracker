@@ -2,54 +2,60 @@ import React from "react";
 import "./style.css";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
-import { Link, useNavigate } from "react-router-dom";
-function Grid({ coin }) {
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+function Grid({ item, i }) {
   return (
-    <Link to={`/coin/${coin.id}`}>
-      <div
+    <Link className="grid-link" to={`/coin/${item.id}`}>
+      <motion.div
+        initial={{ opacity: 0, y: +50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0, delay: i * 0.1 }}
         className={`grid-container ${
-          coin.price_change_percentage_24h < 0 ? "border-red" : "border-green"
+          item.price_change_percentage_24h > 0 ? "green3" : "red3"
         }`}
       >
-        <div className="info-flex">
-          <img src={coin.image} className="coin-logo" />
-          <div className="name-col">
-            <p className="coin-symbol">{coin.symbol}</p>
-            <p className="coin-name">{coin.name}</p>
+        <div className="grid-div1">
+          <img src={item.image} className="logo" />
+          <div className="coin-names">
+            <p>{item.symbol}</p>
+            <p>{item.id}</p>
           </div>
         </div>
         <div className="chip-flex">
-          <div
-            className={`chip-price ${
-              coin.price_change_percentage_24h < 0 ? "red" : "green"
+          <p
+            className={`chip-flex-p1 ${
+              item.price_change_percentage_24h > 0 ? "green1" : "red1"
             }`}
           >
-            {coin.price_change_percentage_24h.toFixed(2)}%
-          </div>
-          <div
-            className={`chip-price edit ${
-              coin.price_change_percentage_24h < 0 ? "red" : "green"
+            {item.price_change_percentage_24h > 0
+              ? "+" + item.price_change_percentage_24h.toFixed(2) + " %"
+              : item.price_change_percentage_24h.toFixed(2) + " %"}
+          </p>
+          <p
+            className={`chip-flex-p2 ${
+              item.price_change_percentage_24h > 0 ? "green1" : "red1"
             }`}
           >
-            {coin.price_change_percentage_24h > 0 ? (
+            {item.price_change_percentage_24h > 0 ? (
               <TrendingUpIcon />
             ) : (
               <TrendingDownIcon />
             )}
-          </div>
+          </p>
         </div>
-        <h3
-          className={`coin-price ${
-            coin.price_change_percentage_24h < 0 ? "red1" : "green1"
+        <p
+          className={`price ${
+            item.price_change_percentage_24h > 0 ? "green2" : "red2"
           }`}
         >
-          ${coin.current_price.toLocaleString()}
-        </h3>
+          ${item.current_price.toLocaleString()}
+        </p>
         <div className="total-volume">
-          <p>Total Volume : {coin.total_volume.toLocaleString()}</p>
-          <p>Market Cap : {coin.market_cap.toLocaleString()}</p>
+          <p>Total Volume : ${item.total_volume.toLocaleString()}</p>
+          <p>Market Cap : ${item.market_cap.toLocaleString()}</p>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }
