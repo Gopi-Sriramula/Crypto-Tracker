@@ -1,0 +1,27 @@
+.radioContainer{
+     border-radius: 0.5rem;
+     display: flex;
+     width: fit-content;
+     color: #6798e2;
+     /* padding: 1rem;
+     gap: 1rem; */
+     input{
+          display: none;
+     }
+     input:checked+label{
+          background-color: #88b7fe1e;
+     }
+     label{
+          
+          border: 1px solid #6798e2;
+          padding: 1rem;
+     }
+}
+.label1{
+     border-bottom-left-radius: 0.5rem;
+     border-top-left-radius: 0.5rem;
+}
+.label2{
+     border-top-right-radius: 0.5rem;
+     border-bottom-right-radius: 0.5rem;
+}

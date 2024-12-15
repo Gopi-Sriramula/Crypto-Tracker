@@ -1,0 +1,23 @@
+.selectContainer{
+     display: flex;
+     gap: 1rem;
+     align-items: center;
+     margin: 1rem;
+}
+.select{
+     padding: 0.5rem 0.2rem;
+     width: fit-content;
+     font-size: large;
+     border-radius: 0.3rem;
+     background-color: var(--black);
+     color: var(--white);
+     border: 1px solid var(--white);
+     option{
+          background-color: var(--white);
+          color: black;
+     }
+}
+.select:focus{
+     border-color: var(--blue);
+     border-width: 2px;
+}
