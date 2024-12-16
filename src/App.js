@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import DashBoard from "./pages/DashBoard";
 import CoinPage from "./pages/coinPage";
 import Watchlist from "./pages/Watchlist";
+import ComparePage from "./pages/compare";
 const App = function(){
   return <div>
     <HashRouter>
@@ -12,6 +13,7 @@ const App = function(){
         <Route path="/dashboard" element={<DashBoard/>}/>
         <Route path="/coin/:id" element={<CoinPage/>}/>
         <Route path="/watchlist" element={<Watchlist/>}/>
+        <Route path="/compare" element={<ComparePage/>}/>
       </Routes>
     </HashRouter>
   </div>
